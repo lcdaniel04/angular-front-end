@@ -1,0 +1,128 @@
+<mat-spinner class="posicion" *ngIf="visible"></mat-spinner>
+
+<div
+  class="d-flex flex-column min-vh-100 justify-content-center align-items-center"
+>
+  <mat-tab-group>
+    <mat-tab label="Iniciar Sesión">
+      <mat-card class="">
+        <form [formGroup]="login" (ngSubmit)="onSubmit()" novalidate="">
+          <div class="w-100">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Correo Electrónico</mat-label>
+              <input
+                matInput
+                placeholder="example@correo.com"
+                type="text"
+                formControlName="email"
+                appTrim
+                [(ngModel)]="usuario.email"
+              />
+            </mat-form-field>
+          </div>
+          <div class="w-100">
+            <mat-form-field class="w-100">
+              <mat-label>Contraseña</mat-label>
+
+              <input
+                matInput
+                placeholder="Contraseña"
+                type="password"
+                formControlName="password"
+                [(ngModel)]="usuario.password"
+                appTrim
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="w-100">
+            <input
+              class="btn btn-primary"
+              type="submit"
+              value="Ingresar"
+              [disabled]="visible"
+            />
+          </div>
+        </form>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="Registro">
+      <mat-card class="">
+        <form
+          [formGroup]="registro"
+          (ngSubmit)="onSubmitRegistro()"
+          novalidate=""
+        >
+          <div class="w-100">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Cédula</mat-label>
+              <input
+                matInput
+                placeholder="example@correo.com"
+                type="text"
+                formControlName="cedula"
+                appTrim
+                [(ngModel)]="usuario.id"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Nombres</mat-label>
+              <input
+                matInput
+                placeholder="example@correo.com"
+                type="text"
+                formControlName="nombres"
+                appTrim
+                [(ngModel)]="usuario.nombre"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Apellidos</mat-label>
+              <input
+                matInput
+                placeholder="example@correo.com"
+                type="text"
+                formControlName="apellidos"
+                appTrim
+                [(ngModel)]="usuario.apellidos"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Correo Electrónico</mat-label>
+              <input
+                matInput
+                placeholder="example@correo.com"
+                type="email"
+                formControlName="email"
+                appTrim
+                [(ngModel)]="usuario.email"
+              />
+            </mat-form-field>
+          </div>
+          <div class="w-100">
+            <mat-form-field class="w-100">
+              <mat-label>Contraseña</mat-label>
+              <input
+                matInput
+                placeholder="Contraseña"
+                type="password"
+                formControlName="password"
+                [(ngModel)]="usuario.password"
+                appTrim
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="w-100">
+            <input
+              class="btn btn-primary"
+              type="submit"
+              value="Guardar"
+              [disabled]="visible"
+            />
+          </div>
+        </form>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
+</div>

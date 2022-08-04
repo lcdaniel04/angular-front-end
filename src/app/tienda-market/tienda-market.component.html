@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">{{usuario!.email}}</a>
+    <button mat-button (click)="carrito=true" routerLink="../market/pedido">Pedidos</button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Catgegorias</mat-label>
+          <mat-select [(value)]="categoria">
+            <mat-option routerLink="../market" (click)="consultarProductos(categoria.categoryId); carrito=false"
+            *ngFor="let categoria of categorias"
+            value="{{ categoria.categoryId }}">
+          {{ categoria.category }}
+        </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ul>
+
+        <button mat-button >Tienda</button>
+        <button mat-button [matMenuTriggerFor]="belowMenu">{{usuario.name}}<mat-icon>account_circle</mat-icon></button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+          <button mat-menu-item>Cuenta</button>
+          <button mat-menu-item (click)="salir()">Salir</button>
+        </mat-menu>
+        <p>
+          <mat-icon style="cursor: pointer;" matBadge="{{cantidad}}" *ngIf="cantidad > 0" matBadgeColor="warn" (click)="carrito=!carrito" routerLink="../market/cart">add_shopping_cart</mat-icon>
+        </p>
+
+    </div>
+  </div>
+</nav>
+<app-productos [productos]="productos" *ngIf="!carrito"></app-productos>
+<router-outlet></router-outlet>
+
