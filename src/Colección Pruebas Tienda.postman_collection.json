@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "1aa42fe3-a706-48f9-8c9f-ff90e0c025e0",
+		"name": "Colección Pruebas Tienda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "producto - all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/producto/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"producto",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "producto - id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/producto/50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"producto",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "producto - categoria - id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/producto/categoria/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"producto",
+						"categoria",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "producto - save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 51,\r\n    \"name\": \"Cafe\",\r\n    \"categoryId\": 8,\r\n    \"price\": 6200.0,\r\n    \"stock\": 300,\r\n    \"active\": true,\r\n    \"category\": {\r\n        \"categoryId\": 8,\r\n        \"category\": \"Despensa\",\r\n        \"active\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/producto/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"producto",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "producto - delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/producto/delete/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"producto",
+						"delete",
+						"53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "compras - all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/compras/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"compras",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "compras - user - id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/compras/user/3022651",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"compras",
+						"user",
+						"3022651"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "compras - save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"purchaseId\": \"\",\r\n        \"userId\": \"3022651\",\r\n        \"date\": \"1992-08-10T17:30:00\",\r\n        \"paymentMethod\": \"E\",\r\n        \"comment\": \"\",\r\n        \"state\": \"P\",\r\n        \"items\": [\r\n            {\r\n                \"productId\": 1,\r\n                \"quantity\": 10,\r\n                \"total\": 3000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 24,\r\n                \"quantity\": 1,\r\n                \"total\": 4000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 27,\r\n                \"quantity\": 1,\r\n                \"total\": 9000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 36,\r\n                \"quantity\": 1,\r\n                \"total\": 40000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 49,\r\n                \"quantity\": 2,\r\n                \"total\": 16400.0,\r\n                \"active\": true\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/compras/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"compras",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario - login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"mancor@gmail.com\",\r\n    \"password\": \"Man11\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tienda-market/api/usuario/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tienda-market",
+						"api",
+						"usuario",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
